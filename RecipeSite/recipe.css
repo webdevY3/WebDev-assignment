@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  color: #055668;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav{
+	background-color: #847c7c;
+	color: #edcccb;
+	font-size: 14px;
+  width: 100%;
+}
+
+.nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav li{
+  float: left;
+}
+
+.nav li a{
+  display: block;
+  padding : 14px 15px;
+  color: #edcccb;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: #254946;
+}
+
+.wrapper{
+  background-image: linear-gradient(290deg, #55df98, #455b97);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  }
+
+.content{
+  max-width: 1000px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.profInfo {
+  background: #eceeee;
+  padding: 15px;
+  border: 1px solid #42464b;
+  border-radius: 6px;
+  margin: 20px auto 0;
+}
+
+.gridCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+}
+
+.Ruser{
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
+  font-weight: bold;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.Rpic {
+  justify-self: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.RPic img {
+  border: 2px solid white;
+}
+
+.RInfo {
+  align-self: center;
+  font-size: 20px;
+  font-weight: bold;
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.RName {
+  color: #ffb642;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+
+.RIng {
+  font-size: 20px;
+  font-weight: bold;
+  grid-column: 1/4;
+  grid-row: 4/5;
+}
+
+.RDir {
+  font-size: 20px;
+  font-weight: bold;
+  grid-column: 1/4;
+  grid-row: 5/6;
+}

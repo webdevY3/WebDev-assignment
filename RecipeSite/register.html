@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+	<link rel="stylesheet" href="Login.css" type="text/css" />
+  <link rel="stylesheet" href="prof.css" type="text/css" />
+<!--Ajax script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script >
+//function
+function Vpassword()
+{
+	//shows div message
+	$("#message").show();
+	//checks if the passwords on the form match
+	if($('#pass').val() == $('#confpass').val() )
+	{
+		//prints they are matching and changes the color to green
+		$('#message').html('Matching').css('color', 'green');
+		//enables the submit button
+		$('#submit-button').prop('disabled', false);
+	}
+	else
+	{
+		//prints they arnt matching and changes the text color to red
+		$('#message').html('Passwords do not match').css('color', 'red');
+		//disables the submit button
+		$('#submit-button').prop('disabled', true);
+	}
+}
+
+</script>
+</head>
+  <body>
+    <div class="wrapper">
+    <div class="content">
+
+      <nav class="nav">
+        <ul>
+          <li><a href="Search.php">Home</a></li>
+          <li><a href="Profile.php">Profile</a></li>
+          <li><a href="NewRecipe.php">Upload</a></li>
+          <li style="float:right"><a href="Login.php">Login</a></li>
+        </ul>
+      </nav>
+
+      <div class="form">
+        <h1>Register</h1>
+        <form action="AddUser.php" method="post" enctype="multipart/form-data">
+          <input type="text" placeholder="Enter Username" name="username" required>
+          <input type="text" placeholder="Enter Email" name="email" pattern="[a-z]+@+[a-z]+.com" title="Must be a valid email" required>
+          <input type="password" placeholder="Enter Password" id="pass" name="pass" onkeyup="Vpassword()" minlength="6" required>
+          <input type="password" placeholder="Enter Password again" id="confpass" name="confpass" onkeyup="Vpassword()" minlength="6" required>
+    		  <div class="forgot" id="message" style="display:none"><span id='message'></span></div>
+    		  <select name="Security_Q" required>
+    				<option value="" disabled selected>Select your security question</option>
+    				<option value="Favourite animal">Favourite animal</option>
+    				<option value="Mothers maiden name">Mothers maiden name</option>
+    		  </select>
+    		  <input type="text" placeholder="Enter security answer" name="Security_A" required>
+          <textarea name="description">Write your bio...</textarea>
+          <br>
+          <div class="ImgSelect">Select a profile picture:</div>
+          <input type="file" accept="image/*" name="pic">
+          <input type="submit" value="Register">
+        </form>
+      </div>
+
+    </div>
+    </div>
+  </body>
+</html>
